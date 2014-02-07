@@ -1,0 +1,116 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace VehicleTracking
+{
+    class Vehicle
+    {
+        #region Properties
+
+        //variable declarations.
+        //the 'Make' property.
+        private string mMake = "";
+        public string Make
+        {
+            get
+            {
+                return mMake;
+            }
+            set
+            {
+                mMake = value;
+            }
+        }
+
+        //the 'Model' property.
+        private string mModel = "";
+        public string Model
+        {
+            get
+            {
+                return mModel;
+            }
+            set
+            {
+                mModel = value;
+            }
+        }
+
+        //the 'eVehicleCondition' enumerator.
+        public enum eVehicleCondition
+        {
+            GOOD,
+            BAD,
+            UGLY
+        }
+
+        //The 'Condition' property.
+        private eVehicleCondition mCondition;
+        public eVehicleCondition Condition
+        {
+            get
+            {
+                return mCondition;
+            }
+            set
+            {
+                mCondition = value;
+            }
+        }
+
+        //the 'Price' property.
+        private double mPrice = 0;
+        public double Price
+        {
+            get
+            {
+                return mPrice;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    mPrice = value;
+                }
+                else
+                {
+                    mPrice = 0;
+                }
+            }
+        }
+        
+        #endregion
+
+        #region Constructors
+
+        //empty constructor.
+        public Vehicle()
+        {
+
+        }
+
+        #endregion
+
+        #region Methods
+
+        //constructor.
+        public Vehicle(string newMake, string newModel, eVehicleCondition newCondition, double newPrice)
+        {
+            Make = newMake;
+            Model = newModel;
+            Condition = newCondition;
+            Price = newPrice;
+        }
+
+        //ToStringMethod.
+        public override string ToString()
+        {
+            return Make + " - " + Model + ", in " + Condition + " condition.   Price : R" + Price;
+        }
+
+        #endregion
+        
+    }
+}
