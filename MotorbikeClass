@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace VehicleTracking
+{
+    class Motorbike : Vehicle
+    {
+        #region Properties
+
+        //the 'EngineCapacity' property.
+        private int mEngineCapacity = 0;
+        public int EngineCapacity
+        {
+            get
+            {
+                return mEngineCapacity;
+            }
+            set
+            {
+                mEngineCapacity = value;
+            }
+        }
+
+        #endregion
+
+        #region Constructors
+
+        //constructor.
+        public Motorbike()
+            : base()
+        {
+
+        }
+
+        #endregion
+
+        #region Methods
+
+        //constructor.
+        public Motorbike(string make, string model, eVehicleCondition condition, double price, int engineCapacity)
+            : base(make, model, condition, price)
+        {
+            EngineCapacity = engineCapacity;
+        }
+
+        //ToString method.
+        public override string ToString()
+        {
+            return base.ToString() + ", Engine Capacity: " + EngineCapacity;
+        }
+
+        #endregion
+    }
+}
