@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace VehicleTracking
+{
+    class Truck : Vehicle
+    {
+        #region Properties
+        
+        //the 'CargoCapacity' property.
+        private int mCargoCapacity = 0;
+        public int CargoCapacity
+        {
+            get
+            {
+                return mCargoCapacity;
+            }
+            set
+            {
+                mCargoCapacity = value;
+            }
+        }
+
+        #endregion
+
+        #region Constructors
+
+        //constructor.
+        public Truck()
+            : base()
+        {
+
+        }        
+
+        #endregion
+
+        #region Methods
+
+        //constructor.
+        public Truck(string make, string model, eVehicleCondition condition, double price, int cargoCapacity)
+            : base(make, model, condition, price)
+        {
+            CargoCapacity = cargoCapacity;
+        }
+        
+        //ToString method.
+        public override string ToString()
+        {
+            return base.ToString() + ", Cargo Capacity: " + CargoCapacity;
+        }
+
+        #endregion
+    }
+}
